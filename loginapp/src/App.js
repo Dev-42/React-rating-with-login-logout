@@ -1,8 +1,21 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 const App = () => {
   return (
-    <div className="App">
-      {/* Either Dashboard or Login component should be visible at a time */}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <div className="auth-wrapper">
+          <div className="auth-inner">
+            <Routes>
+              <Route path="/" element={<Login />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/register" element={<Signup />}></Route>
+            </Routes>
+            <ToastContainer />
+          </div>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 };
 
